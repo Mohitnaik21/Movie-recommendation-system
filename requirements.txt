@@ -1,0 +1,12 @@
+flask
+flask-sqlalchemy
+flask-login
+flask-wtf
+requests
+pandas
+scikit-learn
+scikit-surprise
+nltk
+python-dotenv
+gunicorn
+email-validator

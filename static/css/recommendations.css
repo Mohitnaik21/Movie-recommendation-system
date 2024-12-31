@@ -1,0 +1,19 @@
+.card img {
+    border-radius: 10px;
+}
+
+.section-header h2 {
+    color: #007bff;
+    font-weight: bold;
+    text-transform: uppercase;
+}
+
+.section-separator {
+    margin: 40px 0;
+    border-top: 3px dashed #ddd;
+}
+
+.card:hover {
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+    transition: box-shadow 0.3s ease;
+}

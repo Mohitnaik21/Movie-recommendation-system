@@ -1,0 +1,196 @@
+body {
+    background-color: #f8f9fa;
+  }
+  
+  .navbar {
+    margin-bottom: 20px;
+  }
+  
+  .movie-poster {
+    max-width: 100%;
+    height: auto;
+    border-radius: 10px;
+  }
+  
+  .cast-list {
+    list-style: none;
+    padding: 0;
+  }
+  
+  .cast-list li {
+    margin: 5px 0;
+  }
+  
+  .review-item {
+    border-bottom: 1px solid #ccc;
+    padding: 10px 0;
+  }
+  
+  .review-author {
+    font-weight: bold;
+  }
+  
+  .review-sentiment span {
+    font-weight: bold;
+  }
+  
+  .card {
+    transition: transform 0.3s;
+  }
+  
+  .card:hover {
+    transform: scale(1.05);
+  }
+  
+  .table {
+    background: white;
+  }
+  
+  h3 {
+    margin-top: 20px;
+    color: #333;
+  }
+  
+  .add-favorite {
+    background-color: green;
+    color: white;
+  }
+  
+  .favorited {
+    background-color: red;
+    color: white;
+  }
+
+  /* General Styles */
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f8f9fa;
+    color: #333;
+    margin: 0;
+    padding: 0;
+  }
+  
+  header {
+    background-color: #343a40;
+    color: white;
+    padding: 20px 0;
+    text-align: center;
+  }
+  
+  footer {
+    background-color: #343a40;
+    color: white;
+    padding: 10px 0;
+    text-align: center;
+    margin-top: 20px;
+  }
+  
+  /* Movie Details Section */
+  #movie-details img {
+    max-width: 100%;
+    border-radius: 10px;
+    margin-bottom: 20px;
+  }
+  
+  #movie-details p {
+    font-size: 1.1em;
+  }
+  
+  /* Cast Section */
+  #cast ul {
+    list-style: none;
+    padding: 0;
+  }
+  
+  #cast ul li {
+    background-color: #fff;
+    border: 1px solid #ddd;
+    padding: 10px;
+    margin-bottom: 5px;
+    border-radius: 5px;
+  }
+  
+  /* Trailer Section */
+  #trailer iframe {
+    border-radius: 10px;
+  }
+  
+  /* Reviews Section */
+  #reviews table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 20px;
+  }
+  
+  #reviews th,
+  #reviews td {
+    padding: 10px;
+    border: 1px solid #ddd;
+  }
+  
+  #reviews th {
+    background-color: #343a40;
+    color: white;
+  }
+  
+  /* Add Review Section */
+  #user-review textarea {
+    width: 100%;
+    margin-bottom: 10px;
+    border-radius: 5px;
+    border: 1px solid #ddd;
+    padding: 10px;
+  }
+  
+  #user-review button {
+    display: inline-block;
+    width: 100%;
+    background-color: #007bff;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    padding: 10px;
+    cursor: pointer;
+  }
+  
+  #user-review button:hover {
+    background-color: #0056b3;
+  }
+  
+  /* Recommendations Section */
+  #recommendations .card {
+    border-radius: 10px;
+    overflow: hidden;
+    transition: transform 0.3s ease;
+  }
+  
+  #recommendations .card:hover {
+    transform: scale(1.05);
+  }
+  
+  #recommendations img {
+    max-width: 100%;
+    border-radius: 10px 10px 0 0;
+  }
+  
+  /* Favorite Button */
+  .btn-outline-primary {
+    border: 1px solid #007bff;
+    color: #007bff;
+    transition: background-color 0.3s ease, color 0.3s ease;
+  }
+  
+  .btn-outline-primary:hover {
+    background-color: #007bff;
+    color: white;
+  }
+  
+  .btn-danger {
+    background-color: #dc3545;
+    border: none;
+  }
+  
+  .btn-danger:hover {
+    background-color: #bd2130;
+  }
+  

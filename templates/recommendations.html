@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Recommendations</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/recommendations.css') }}">
+    <style>
+        .section-separator {
+            margin: 40px 0;
+            border-top: 2px solid #ddd;
+        }
+        .section-header {
+            margin-bottom: 20px;
+            text-align: center;
+        }
+        .card img {
+            height: 300px;
+            object-fit: cover;
+        }
+        .card-body {
+            text-align: center;
+        }
+    </style>
+</head>
+<body>
+       <!-- Navbar -->
+       <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+        <div class="container-fluid">
+            <a class="navbar-brand" href="{{ url_for('index') }}">MovieRecSys</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item">
+                        <a class="nav-link" href="{{ url_for('index') }}">Home</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="{{ url_for('dashboard') }}">Dashboard</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="{{ url_for('logout') }}">Logout</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Main Content -->
+    <div class="container mt-4">
+        <h1 class="text-center mb-4">Your Recommendations</h1>
+
+        <!-- Collaborative Recommendations -->
+        <div class="section-separator"></div>
+        <div class="section-header">
+            <h2>Similar Taste Users</h2>
+        </div>
+        <div class="row row-cols-1 row-cols-md-3 g-4">
+            {% for movie in collaborative_recs %}
+            <div class="col">
+                <a href="{{ url_for('movie_details', movie_id=movie['id']) }}" class="text-decoration-none text-dark">
+                    <div class="card h-100">
+                        <img src="https://image.tmdb.org/t/p/w500{{ movie['poster_path'] }}" class="card-img-top" alt="{{ movie['title'] }}">
+                        <div class="card-body">
+                            <h5 class="card-title">{{ movie['title'] }}</h5>
+                            <p class="card-text">{{ movie['overview'][:100] }}...</p>
+                        </div>
+                    </div>
+                </a>
+            </div>
+            {% endfor %}
+        </div>
+
+        <!-- Content-Based Recommendations -->
+        <div class="section-separator"></div>
+        <div class="section-header">
+            <h2>Movies You'll Like</h2>
+        </div>
+        <div class="row row-cols-1 row-cols-md-3 g-4">
+            {% for movie in content_recs %}
+            <div class="col">
+                <a href="{{ url_for('movie_details', movie_id=movie['id']) }}" class="text-decoration-none text-dark">
+                    <div class="card h-100">
+                        <img src="https://image.tmdb.org/t/p/w500{{ movie['poster_path'] }}" class="card-img-top" alt="{{ movie['title'] }}">
+                        <div class="card-body">
+                            <h5 class="card-title">{{ movie['title'] }}</h5>
+                            <p class="card-text">{{ movie['overview'][:100] }}...</p>
+                        </div>
+                    </div>
+                </a>
+            </div>
+            {% endfor %}
+        </div>
+
+        <!-- Hybrid Recommendations -->
+        <div class="section-separator"></div>
+        <div class="section-header">
+            <h2>Best of Both Worlds</h2>
+        </div>
+        <div class="row row-cols-1 row-cols-md-3 g-4">
+            {% for movie in hybrid_recs %}
+            <div class="col">
+                <a href="{{ url_for('movie_details', movie_id=movie['id']) }}" class="text-decoration-none text-dark">
+                    <div class="card h-100">
+                        <img src="https://image.tmdb.org/t/p/w500{{ movie['poster_path'] }}" class="card-img-top" alt="{{ movie['title'] }}">
+                        <div class="card-body">
+                            <h5 class="card-title">{{ movie['title'] }}</h5>
+                            <p class="card-text">{{ movie['overview'][:100] }}...</p>
+                        </div>
+                    </div>
+                </a>
+            </div>
+            {% endfor %}
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <footer class="bg-dark text-center text-white py-3 mt-4">
+        <p>&copy; 2024 Movie Recommendation System</p>
+    </footer>
+
+    <!-- Bootstrap JS -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>

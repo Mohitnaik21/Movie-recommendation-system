@@ -5,6 +5,7 @@ import nltk
 from models import User  # Import your models
 from routes import setup_routes  # Import route setup function
 from extensions import db
+from config import DevelopmentConfig
 
 login_manager = LoginManager()
 
@@ -16,6 +17,7 @@ def create_app():
     app.config['SECRET_KEY'] = 'your_secret_key'
     app.config['SQLALCHEMY_DATABASE_URI'] = 'sqlite:///database.db'
     app.config['SQLALCHEMY_TRACK_MODIFICATIONS'] = False
+    app.config.from_object(DevelopmentConfig)
 
     # Initialize extensions with the app
     db.init_app(app)
@@ -24,7 +26,7 @@ def create_app():
 
     # Configure LoginManager
     login_manager.login_view = 'login'
-
+    
     # Set up routes
     setup_routes(app)
 

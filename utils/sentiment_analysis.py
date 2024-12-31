@@ -8,6 +8,7 @@ def analyze_sentiments(reviews):
         sentiments.append({
             'author': review['author'],
             'content': review['content'],
+            'rating': review.get('rating', "No rating"),
             'sentiment': sentiment
         })
     return sentiments

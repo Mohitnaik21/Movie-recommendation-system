@@ -85,16 +85,9 @@ A full-stack movie recommendation system with integrated sentiment analysis. Thi
    TMDB_API_KEY=your_tmdb_api_key
    ```
 
-5. **💾 Initialize the Database**:
+5. **▶️ Run the Application**:
    ```bash
-   flask db init
-   flask db migrate -m "Initial migration."
-   flask db upgrade
-   ```
-
-6. **▶️ Run the Application**:
-   ```bash
-   flask run
+   python app.py
    ```
    Access the app at `http://127.0.0.1:5000`.
 
@@ -156,11 +149,6 @@ A full-stack movie recommendation system with integrated sentiment analysis. Thi
 
 ## 🤝 Contributing
 Contributions are welcome! Please fork the repository and submit a pull request with your enhancements or bug fixes.
-
----
-
-## 📜 License
-This project is licensed under the MIT License. See the [LICENSE](LICENSE) file for details.
 
 ---
 
